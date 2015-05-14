@@ -1,3 +1,29 @@
 // Ionic
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
 @import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+
+/*-----------Ranger-------------*/
+
+/*common*/
+.padding-l10 { padding-left: 10px; }
+.margin-l10 { margin-left: 10px; }
+
+body { background: #eee; }
+/*homepage*/
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.owl-controls { display: none; }
+.home-btn { 
+	left: 30%; 
+	width: 40%; 
+	height: 150px; 
+	bottom: 50px; 
+	z-index: 2; 
+	font-size: $button-font-size; 
+	position: absolute; 
+}
+/*user*/
+.item-input { padding-left: 10px; }
