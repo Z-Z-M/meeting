@@ -1,0 +1,13 @@
+<template name="_meetingItem">
+	{{#with meetingItem}}
+	    {{#ionItem path=../path iconLeft=true iconRight=true}}
+		      <h2>{{meetingTime}}</h2>
+		      <p>
+		        {{meetingName}}
+		      </p>
+		      <span class="comments-count">
+		        {{meetingVote}}
+		      </span>
+		{{/ionItem}}   
+	{{/with}}
+</template>
