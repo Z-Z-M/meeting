@@ -16,8 +16,29 @@
 	};
 
 	Template.meetingList.helpers({
-	  meetingList: function () {
-	    return MeetingList.find({}, {sort: {meetingTime: -1}});
-	  }
+		meetingList: function () {
+			return MeetingList.find({}, {sort: {meetingTime: -1,meetingVote: -1}});
+		},
+		selectedName: function(){
+			console.log(this);
+			var meeting = MeetingList.findOne(Session.get("selectedMeeting"));
+			return meeting && meeting.meetingName;
+		}
+
 	});
 
+	Template._meetingItem.helpers({
+		selected: function (){
+			return Session.equals("selectedMeeting",this._id) ? "selected" : '';
+		}
+	});
+
+	Template._meetingItem.events({
+		'click .my-class': function () {
+			console.log(this);
+			Session.set("selectedMeeting",this._id);
+		},
+		'click .meeting-count': function () {
+			MeetingList.update(this._id,{$inc:{meetingVote: 1}});
+		}
+	});
