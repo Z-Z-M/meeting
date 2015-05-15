@@ -1,7 +1,3 @@
-	var tempStatus = {
-	  status: '',
-	  current: '',
-	}
 
 	Template.meetingList.created = function () {
 	  this.autorun(function () {
@@ -21,7 +17,6 @@
 
 	Template.meetingList.helpers({
 		meetingList: function () {
-			console.log(tempStatus);
 			return MeetingList.find({}, {sort: {meetingTime: -1,meetingVote: -1}});
 		},
 		selectedName: function(){
@@ -41,8 +36,6 @@
 	Template._meetingItem.events({
 		'click .my-class': function () {
 			console.log(this);
-			tempStatus.status = 'selected';
-			tempStatus.current = this;
 			Session.set("selectedMeeting",this._id);
 		},
 		'click .meeting-count': function () {
