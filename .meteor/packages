@@ -22,4 +22,5 @@ accounts-password
 accounts-base
 reywood:publish-composite
 bengott:avatar
-
+insecure
+udondan:slick

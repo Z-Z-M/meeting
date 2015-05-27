@@ -14,7 +14,11 @@ registerController = AppController.extend({
 	layoutTemplate: ''
 });
 
+<<<<<<< HEAD
 MeetingListController = AppController.extend({});
 
 ProfileController = AppController.extend({});
 
+=======
+MeetingListController = AppController.extend({});
+>>>>>>> Ranger

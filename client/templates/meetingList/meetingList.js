@@ -27,7 +27,6 @@
 			var meeting = MeetingList.findOne(Session.get("selectedMeeting"));
 			return meeting && meeting.meetingName;
 		}
-
 	});
 
 	Template._meetingItem.helpers({
@@ -45,10 +44,17 @@
 	});
 
 	Template._meetingItem.events({
+<<<<<<< HEAD
 		'click .meeting-list': function (event, template) {
 			//console.log(this);
 			Session.set("selectedMeeting",this._id);
 			$(event.currentTarget).addClass("selected");
+=======
+		'click .meeting-list': function () {
+			console.log(this);
+			Session.set("selectedMeeting",this._id);
+			$(event.currentTarget).addClass("selected");//.siblings().removeClass("selected");
+>>>>>>> Ranger
 		},
 		'click .meeting-count': function (event, template) {
 			event.preventDefault();
