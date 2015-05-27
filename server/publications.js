@@ -20,9 +20,13 @@ Meteor.publishComposite('userVoteInfo', function(_id) {
     children: [
       {
         find: function(user) {
-          return MeetingList.find({_id: {$in: user.profile.votedMeetingIds}});
+          return MeetingList.find({_id: {$in: user.profile.votedMeetingIds}}); 
         }
       }
     ]
   };
+});
+
+Meteor.publish('commands',function (){
+  return Commands.find({},{sort:{createdAt:-1},limit:1});
 });
