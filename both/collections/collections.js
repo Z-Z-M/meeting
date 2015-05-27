@@ -1,1 +1,0 @@
-MeetingList = new Mongo.Collection('meetingList');

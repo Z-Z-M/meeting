@@ -1,12 +1,12 @@
 <template name="_meetingItem">
 	{{#with item}}
-	    {{#ionItem _id=this._id selectediconLeft=true iconRight=true  class="my-class" }}
-		      <p class="meetingTime f_l">{{meetingTime}}</p>
+	    {{#ionItem _id=this._id selectediconLeft=true iconRight=true  class="meeting-list" }}
+		      <p class="meetingTime f_l">{{formatTime meetingTime}}</p>
 		      <p class="meetingName">
 		        {{meetingName}}
 		      </p>
 		      <div class="meeting-count">
-		       ⭐️<span class="vote">{{meetingVote}}</span>
+		       ⭐️<span class="vote">{{meetingVotes}}</span>
 		      </div>
 		{{/ionItem}}
 	{{/with}}

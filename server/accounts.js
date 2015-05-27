@@ -1,0 +1,18 @@
+Meteor.startup(function() {
+  ServiceConfiguration.configurations.remove({service: 'meteor-developer'});
+  ServiceConfiguration.configurations.insert({
+    service: 'meteor-developer',
+    clientId: Meteor.settings.meteorDeveloper.clientId,
+    secret: Meteor.settings.meteorDeveloper.secret
+  });
+});
+
+Accounts.onCreateUser(function(options, user) {
+    if(!options.profile){
+       options.profile = {}
+    }
+    //options.profile.permission = 'default'
+    if (options.profile)
+        user.profile = options.profile;
+    return user;
+});

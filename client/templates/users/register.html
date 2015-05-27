@@ -1,0 +1,17 @@
+<template name="register">
+<div class="register-container">   
+    <form id="register-form" action="action">
+      <h2>meeting注册</h2>
+     	<input type="username" id="account-username" placeholder="用户名"/>     
+      <input type="tel" id="account-tel" placeholder="电话"/><button>点击获取验证码</button>
+      <input type="code" id="account-code" placeholder="验证码"/>
+      <input type="email" id="account-email" placeholder="邮箱"/>
+      <input type="password" id="account-password" placeholder="密码"/>
+      <input type="password" id="account-confirm-password" placeholder="重复密码"/>
+       <input type="submit" id="create-account" value="注册" />
+   </form>
+    <div class="help-bar">
+    如果您已有帐号，请&nbsp;<a href="/users/login" id="signUp" class="link signup positive">登录</a>
+    </div>   
+</div>
+</template>

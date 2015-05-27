@@ -1,5 +1,3 @@
-
-
 Template.home.rendered = function () {
   $("#owl-demo").owlCarousel({
         
@@ -18,3 +16,9 @@ Template.home.rendered = function () {
    
    })
 };
+
+Template.home.events( {
+    'click .active': function(){
+        
+    }
+});

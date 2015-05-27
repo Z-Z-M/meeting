@@ -11,5 +11,15 @@ meteoric:ionic
 msavin:mongol
 momentjs:moment
 richsilv:owl-carousel
-insecure
+
+matb33:collection-hooks
+dburles:collection-helpers
+aldeed:collection2
+aldeed:autoform
+meteoric:autoform-ionic
+service-configuration
+accounts-password
+accounts-base
+reywood:publish-composite
+bengott:avatar
 

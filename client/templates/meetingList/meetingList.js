@@ -1,4 +1,7 @@
-
+	UI.registerHelper('formatTime', function(context, options) {
+  		if(context)
+    		return moment(context).format('YYYY-MM-DD HH:mm:ss');
+	});
 	Template.meetingList.created = function () {
 	  this.autorun(function () {
 	    this.subscription = Meteor.subscribe('meetingList');
@@ -30,15 +33,31 @@
 	Template._meetingItem.helpers({
 		selected: function (){
 			return Session.equals("selectedMeeting",this._id) ? "selected" : '';
+		},
+		hasVotedClass: function () {
+			if( !Meteor.user() ){
+				return;
+			}
+			if(_(Meteor.user().profile.votedMeetingIds).contains(this._id)){
+				return 'has-voted';
+			}
 		}
 	});
 
 	Template._meetingItem.events({
-		'click .my-class': function () {
-			console.log(this);
+		'click .meeting-list': function (event, template) {
+			//console.log(this);
 			Session.set("selectedMeeting",this._id);
+			$(event.currentTarget).addClass("selected");
 		},
-		'click .meeting-count': function () {
-			MeetingList.update(this._id,{$inc:{meetingVote: 1}});
+		'click .meeting-count': function (event, template) {
+			event.preventDefault();
+
+			if(!Meteor.user()){
+				IonModal.open('signIn');
+				return;
+			}
+			Meteor.call('MeetingList.vote',this._id);
+			//MeetingList.update(this._id,{$inc:{meetingVote: 1}});
 		}
 	});

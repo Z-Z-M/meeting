@@ -6,8 +6,15 @@ HomeController = AppController.extend({
 	layoutTemplate: ''
 });
 
-UsersController = AppController.extend({
+loginController = AppController.extend({
+	layoutTemplate: ''
+});
+
+registerController = AppController.extend({
 	layoutTemplate: ''
 });
 
 MeetingListController = AppController.extend({});
+
+ProfileController = AppController.extend({});
+

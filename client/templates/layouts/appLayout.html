@@ -5,12 +5,13 @@
 
     {{#ionNavView}}
       {{> yield}}
+      }
     {{/ionNavView}}
 
     {{#ionTabs style="ios"}}
       {{> ionTab title="Home" path="home" iconOff="ios-bolt-outline" iconOn="ios-bolt" class="tab-item-positive"}}
-      {{> ionTab title="Users" path="users" iconOff="ios-clock-outline" iconOn="ios-clock" class="tab-item-positive"}}
       {{> ionTab title="Meeting" path="meetingList" iconOff="ios-bell-outline" iconOn="ios-bell" class="tab-item-positive"}}
+      {{> ionTab title="Profile" path="profile" iconOff="ios-person-outline" iconOn="ios-person" class="tab-item-positive"}}
     {{/ionTabs}}
 
   {{/ionBody}}

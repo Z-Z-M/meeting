@@ -1,0 +1,25 @@
+﻿<template name="login">
+<div class="bar bar-header bar-light">
+    <h1 class="title">meeting</h1>
+</div>
+<div class="content has-header">
+    <form id="login-form" action="action">
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">用户名</span>
+                <input type="text" name="logni-username" id="logni-username">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">密码</span>
+                <input type="password" name="login-password" id="login-password">
+            </label>
+        </div>
+        <div class="padding">
+            <button type="submit" class="button button-block button-positive">登录</button>
+        </div>
+    </form>
+    <div class="help-bar">
+        还没有帐号？<a href="/users/register" id="signUp" class="link signup positive">注册</a>
+    </div>
+</div>
+</template>
