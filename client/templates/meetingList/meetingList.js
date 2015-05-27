@@ -44,17 +44,16 @@
 	});
 
 	Template._meetingItem.events({
-<<<<<<< HEAD
+
 		'click .meeting-list': function (event, template) {
+			
+			Session.set("selectedMeeting",this._id);
+			$(event.currentTarget).addClass("selected");
+		},
+		'click .meeting-list': function () {
 			//console.log(this);
 			Session.set("selectedMeeting",this._id);
 			$(event.currentTarget).addClass("selected");
-=======
-		'click .meeting-list': function () {
-			console.log(this);
-			Session.set("selectedMeeting",this._id);
-			$(event.currentTarget).addClass("selected");//.siblings().removeClass("selected");
->>>>>>> Ranger
 		},
 		'click .meeting-count': function (event, template) {
 			event.preventDefault();
@@ -64,6 +63,6 @@
 				return;
 			}
 			Meteor.call('MeetingList.vote',this._id);
-			//MeetingList.update(this._id,{$inc:{meetingVote: 1}});
+			
 		}
 	});
