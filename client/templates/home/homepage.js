@@ -1,20 +1,50 @@
 
 
-Template.home.rendered = function () {
-  $("#owl-demo").owlCarousel({
-        
-        navigation : false, // Show next and prev buttons
-        slideSpeed : 300,
-        items : 1,
-        paginationSpeed : 400,
-        singleItem:true
-   
-        // "singleItem:true" is a shortcut for:
-        // items : 1, 
-        // itemsDesktop : false,
-        // itemsDesktopSmall : false,
-        // itemsTablet: false,
-        // itemsMobile : false
-   
-   })
+Tracker.autorun(function(){
+	Meteor.subscribe('commands');
+});
+
+Template.home.onCreated(function(){
+   var instance =this;
+   instance.autorun(function(){
+		  var commands = Commands.find({},{sort:{createdAt:-1}});
+		  commands.observe({
+		  	added:function(cmd){
+		  		var stat=Session.get('status');
+		  		if(!stat){
+		  			stat="open";
+		  		}
+		  		if(stat=='open'){
+		  		  alert(cmd.command);
+		  	    }
+		  	}
+
+		  });
+
+   });
+
+});
+Template.home.rendered = function() {
+  IonSideMenu.snapper.disable();
+  
 };
+
+Template.home.destroyed = function() {
+  IonSideMenu.snapper.enable();
+};
+
+Template.home.events({
+ 'click #open-control':function(){
+ 		Session.set("status","open");
+ },
+ 'click #close-control':function(){
+ 		Session.set("status","close");
+ },
+ 'click #btn-left':function(){
+ 		Commands.insert({command:'left',createdAt:new Date()});
+ },
+ 'click #btn-right':function(){
+ 		Commands.insert({command:'right',createdAt:new Date()});
+ },
+
+});

@@ -24,7 +24,6 @@
 			var meeting = MeetingList.findOne(Session.get("selectedMeeting"));
 			return meeting && meeting.meetingName;
 		}
-
 	});
 
 	Template._meetingItem.helpers({
@@ -34,9 +33,10 @@
 	});
 
 	Template._meetingItem.events({
-		'click .my-class': function () {
+		'click .meeting-list': function () {
 			console.log(this);
 			Session.set("selectedMeeting",this._id);
+			$(event.currentTarget).addClass("selected");//.siblings().removeClass("selected");
 		},
 		'click .meeting-count': function () {
 			MeetingList.update(this._id,{$inc:{meetingVote: 1}});
