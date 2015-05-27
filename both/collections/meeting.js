@@ -1,5 +1,4 @@
 MeetingList = new Mongo.Collection('meetingList');
-
 MeetingList.before.insert(function (userId, doc) {
   doc.createdAt = moment(this.createdAt).format('YYYY-MM-DD HH:mm:ss');
 });
