@@ -57,11 +57,12 @@
 		},
 		'click .meeting-count': function (event, template) {
 			event.preventDefault();
-
+/*
 			if(!Meteor.user()){
 				IonModal.open('signIn');
 				return;
 			}
+*/			console.log(this._id);
 			Meteor.call('MeetingList.vote',this._id);
 			
 		}
