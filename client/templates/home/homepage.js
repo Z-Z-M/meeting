@@ -13,14 +13,6 @@ Template.home.onCreated(function(){
 		  			stat="close";
 		  		}
 		  		if(stat=='open'){
-		  		  alert(cmd.command);
-		  		  // if(cmd.command=='left'){
-		  		  // 	alert('执行向左滚动的函数。');
-		  		  // }else{
-		  		  // 	alert('执行向左滚动的函数。');
-		  		  // }
-		  	    }
-
 
 		  		  if(cmd.command=='left'){
 
@@ -48,10 +40,8 @@ Template.home.events({
  },
  'click #btn-right':function(){
  		Commands.insert({command:'right',createdAt:new Date()});
-
- },
-});
-
  }
 });
+
+
 
