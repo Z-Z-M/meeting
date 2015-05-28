@@ -1,21 +1,3 @@
-angular.module('ionicApp', ['ionic'])
-
-.controller('SlideController', function($scope, $ionicSlideBoxDelegate) {
-  
-  $scope.myActiveSlide = 1;
-  
-  $scope.slidePrevious = function() {
-    
-    $ionicSlideBoxDelegate.previous();
-  }
-  
-  $scope.slideNext = function() {
-    
-    $ionicSlideBoxDelegate.next();
-  }
-})
-
-
 Tracker.autorun(function(){
 	Meteor.subscribe('commands');
 });
