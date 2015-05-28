@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 angular.module('ionicApp', ['ionic'])
 
 .controller('SlideController', function($scope, $ionicSlideBoxDelegate) {
@@ -18,8 +16,6 @@ angular.module('ionicApp', ['ionic'])
 })
 
 
-
->>>>>>> Ranger
 Tracker.autorun(function(){
 	Meteor.subscribe('commands');
 });
@@ -35,7 +31,6 @@ Template.home.onCreated(function(){
 		  			stat="close";
 		  		}
 		  		if(stat=='open'){
-<<<<<<< HEAD
 		  		  alert(cmd.command);
 		  		  // if(cmd.command=='left'){
 		  		  // 	alert('执行向左滚动的函数。');
@@ -43,7 +38,7 @@ Template.home.onCreated(function(){
 		  		  // 	alert('执行向左滚动的函数。');
 		  		  // }
 		  	    }
-=======
+
 
 		  		  if(cmd.command=='left'){
 
@@ -51,7 +46,6 @@ Template.home.onCreated(function(){
 
 		  		  }
 		  	  }
->>>>>>> Ranger
 		  	}
 
 		  });
@@ -72,13 +66,10 @@ Template.home.events({
  },
  'click #btn-right':function(){
  		Commands.insert({command:'right',createdAt:new Date()});
-<<<<<<< HEAD
+
  },
 });
-=======
+
  }
 });
 
-
-
->>>>>>> Ranger
