@@ -13,7 +13,7 @@ Template.home.onCreated(function(){
 		  			stat="open";
 		  		}
 		  		if(stat=='open'){
-		  		  //alert(cmd.command);
+		  		  alert(cmd.command);
 		  		  // if(cmd.command=='left'){
 		  		  // 	alert('执行向左滚动的函数。');
 		  		  // }else{
