@@ -1,3 +1,20 @@
+angular.module('ionicApp', ['ionic'])
+
+.controller('SlideController', function($scope, $ionicSlideBoxDelegate) {
+  
+  $scope.myActiveSlide = 1;
+  
+  $scope.slidePrevious = function() {
+    
+    $ionicSlideBoxDelegate.previous();
+  }
+  
+  $scope.slideNext = function() {
+    
+    $ionicSlideBoxDelegate.next();
+  }
+})
+
 
 
 Tracker.autorun(function(){
@@ -12,11 +29,16 @@ Template.home.onCreated(function(){
 		  	added:function(cmd){
 		  		var stat=Session.get('status');
 		  		if(!stat){
-		  			stat="open";
+		  			stat="close";
 		  		}
 		  		if(stat=='open'){
-		  		  alert(cmd.command);
-		  	    }
+
+		  		  if(cmd.command=='left'){
+
+		  		  }else{
+
+		  		  }
+		  	  }
 		  	}
 
 		  });
@@ -24,14 +46,6 @@ Template.home.onCreated(function(){
    });
 
 });
-Template.home.rendered = function() {
-  IonSideMenu.snapper.disable();
-  
-};
-
-Template.home.destroyed = function() {
-  IonSideMenu.snapper.enable();
-};
 
 Template.home.events({
  'click #open-control':function(){
@@ -45,6 +59,8 @@ Template.home.events({
  },
  'click #btn-right':function(){
  		Commands.insert({command:'right',createdAt:new Date()});
- },
-
+ }
 });
+
+
+

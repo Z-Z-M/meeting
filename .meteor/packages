@@ -4,7 +4,7 @@
 # but you can also edit it by hand.
 
 meteor-platform
-iron:router@1.0.0
+iron:router
 meteoric:ionic-sass
 meteoric:ionicons-sass
 meteoric:ionic
@@ -13,3 +13,5 @@ momentjs:moment
 insecure
 
 udondan:slick
+richsilv:owl-carousel
+bootstrap
