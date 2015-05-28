@@ -1,16 +1,44 @@
 <template name="newMeeting">
-  {{#ionModal customTemplate=true}}
-    {{# autoForm collection="MeetingList" id="meeting-new-form" type="insert"}}
-      <div class="bar bar-header bar-stable">
-        <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
-        <h2 class="title">新会议</h2>
-        <button type="submit" class="button button-positive button-clear">Post</button>
-      </div>
-      <div class="content has-header overflow-scroll">
-        {{> afQuickField name="meetingName"}}
-        {{> afQuickField name="tagline"}}
-        {{> afQuickField name="meetingTime"}}
-      </div>
-    {{/autoForm}}
-  {{/ionModal}}
+{{#ionModal title="创建新会议"}}
+<div class="padding">
+    <div class="list">
+        <form>
+            <label class="item item-input">
+                <input type="text" name="meetingName" placeholder="会议名称">
+            </label>
+            <label class="item item-input">
+                <input type="text" name="tagline" placeholder="会议简述">
+            </label>
+            <label class="item item-input">
+                <textarea name="meetingContent" rows="5" placeholder="会议内容"></textarea>
+            </label>
+            <label class="item item-input">
+                <input type="text" name="meetingTime" placeholder="会议时间">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">照片</span>
+                <div class="button-bar">
+                    <span title="拍照" class="fileinput-button">
+                    <a title="拍照" class="button icon ion-android-camera">+</a>
+                    </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span title="选择照片" class="fileinput-button">
+                    <i title="选择照片" class="button icon ion-android-image">+</i>
+                    <!-- The file input field used as target for the file upload widget -->
+                    <input class="fileInput" name="files" id="fileupload" title="选择照片" type="file"
+                    multiple>
+                    </span>
+                </div>
+            </label>
+            <label class="item item-input">
+                <div id="previewImageList">
+                </div>
+            </label>
+            <div class="padding">
+                <button type="submit" class="btn button button-positive button-block submit">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+{{/ionModal}}
 </template>

@@ -1,4 +1,3 @@
-
 Commands  = new Mongo.Collection("commands");
 
 Commands.allow({

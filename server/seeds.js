@@ -1,3 +1,4 @@
+/*
 Meteor.startup(function() {
 	var users = [
 		{
@@ -135,3 +136,4 @@ Meteor.startup(function() {
 		});
 	 }
 });
+*/
