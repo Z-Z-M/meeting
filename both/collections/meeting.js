@@ -1,5 +1,11 @@
+
 MeetingList = new Mongo.Collection('meetingList');
+
+//cfsFilerecord = new Mongo.Collection('cfs.uploads.filerecord');
+
 MeetingList.before.insert(function (userId, doc) {
+  doc.voterIds = [];
+  doc.meetingVotes = 0;
   doc.createdAt = moment(this.createdAt).format('YYYY-MM-DD HH:mm:ss');
 });
 
@@ -29,7 +35,7 @@ MeetingList.search = function(query) {
     limit: 20
   });
 };
-
+/*
 MeetingList.attachSchema(new SimpleSchema({
   meetingName: {
     type: String,
@@ -82,3 +88,4 @@ MeetingList.attachSchema(new SimpleSchema({
     type: Date
   }
 }));
+*/
