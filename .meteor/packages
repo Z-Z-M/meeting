@@ -23,12 +23,11 @@ accounts-base
 reywood:publish-composite
 bengott:avatar
 udondan:slick
-<<<<<<< HEAD
+
 bootstrap
-=======
 
 cfs:standard-packages
 cfs:filesystem
 cfs:graphicsmagick
 mdg:camera
->>>>>>> origin/master
+
