@@ -1,6 +1,11 @@
 <template name="_meetingItem">
 	{{#with item}}
 	    {{#ionItem _id=this._id selectediconLeft=true iconRight=true  class="meeting-list" }}
+
+            {{#each fileIds}}
+            <img class="small-image" src="/cfs/files/uploads/{{this}}?store=thumbs">
+            {{/each}}
+
 		      <p class="meetingTime f_l">{{meetingTime}}</p>
 		      <p class="meetingTime f_l">{{meetingName}}</p>
 		      <p class="meetingName">

@@ -1,5 +1,18 @@
-Meteor.publish("meetingList", function () {
-	return MeetingList.find();
+Meteor.publishComposite("meetingList", function () {
+	//return MeetingList.find();
+  return {
+    find: function(){
+      return MeetingList.find();
+    },
+    children: [
+      {
+        find: function(meeting){
+          console.log(meeting);
+          return Uploads.find({_id: {$in: meeting.fileIds}});
+        }
+      }
+    ]
+  }
 });
 
 Meteor.publish('meetingSearch', function(query) {

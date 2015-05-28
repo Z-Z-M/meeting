@@ -27,3 +27,4 @@ Uploads = new FS.Collection("uploads", {
         }
     }
 });
+

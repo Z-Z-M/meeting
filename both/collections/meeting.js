@@ -1,4 +1,7 @@
+
 MeetingList = new Mongo.Collection('meetingList');
+
+//cfsFilerecord = new Mongo.Collection('cfs.uploads.filerecord');
 
 MeetingList.before.insert(function (userId, doc) {
   doc.voterIds = [];
