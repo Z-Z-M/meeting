@@ -10,16 +10,16 @@ Template.home.onCreated(function(){
 		  	added:function(cmd){
 		  		var stat=Session.get('status');
 		  		if(!stat){
-		  			stat="open";
+		  			stat="close";
 		  		}
 		  		if(stat=='open'){
-		  		  //alert(cmd.command);
-		  		  // if(cmd.command=='left'){
-		  		  // 	alert('执行向左滚动的函数。');
-		  		  // }else{
-		  		  // 	alert('执行向左滚动的函数。');
-		  		  // }
-		  	    }
+
+		  		  if(cmd.command=='left'){
+
+		  		  }else{
+
+		  		  }
+		  	  }
 		  	}
 
 		  });
@@ -27,14 +27,6 @@ Template.home.onCreated(function(){
    });
 
 });
-Template.home.rendered = function() {
-  IonSideMenu.snapper.disable();
-  
-};
-
-Template.home.destroyed = function() {
-  IonSideMenu.snapper.enable();
-};
 
 Template.home.events({
  'click #open-control':function(){
@@ -48,5 +40,8 @@ Template.home.events({
  },
  'click #btn-right':function(){
  		Commands.insert({command:'right',createdAt:new Date()});
- },
+ }
 });
+
+
+

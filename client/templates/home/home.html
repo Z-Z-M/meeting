@@ -1,6 +1,19 @@
 <template name="home">
   <button id="open-control" class="button button-clear button-positive zIndex10 position-left-bottom">开启控制</button>
   <button id="close-control" class="button button-clear button-positive zIndex10 position-right-bottom">关闭控制</button>
+
+  <!-- <ion-slide-box active-slide="myActiveSlide" does-continue="true">
+    <ion-slide>
+      <div class="box"><img src="images/1.jpg"></div>
+    </ion-slide>
+    <ion-slide>
+      <div class="box"><img src="images/2.jpg"></div>
+    </ion-slide>
+    <ion-slide>
+      <div class="box"><img src="images/3.jpg"></div>
+    </ion-slide>
+  </ion-slide-box> -->
+
   {{#ionView}}
     {{#ionContent}}
       {{#ionSlideBox}}
@@ -16,7 +29,8 @@
       {{/ionSlideBox}}
     {{/ionContent}}
   {{/ionView}}
-  <button id="btn-left" class="button button-positive zIndex10 bottom">Left</button>
-  <button id="btn-right" class="button button-positive zIndex10 bottom">Right</button>
+
+  <button id="btn-left" class="button button-positive zIndex10 bottom" ng-click="slidePrevious()">Left</button>
+  <button id="btn-right" class="button button-positive zIndex10 bottom" ng-click="slideNext()">Right</button>
   <a href="meetingList/" class="button button-large button-energized activated zIndex10 f_r">Go</a>
 </template>

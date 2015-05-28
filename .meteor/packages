@@ -24,7 +24,10 @@ reywood:publish-composite
 bengott:avatar
 udondan:slick
 
+bootstrap
+
 cfs:standard-packages
 cfs:filesystem
 cfs:graphicsmagick
 mdg:camera
+
