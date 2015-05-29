@@ -10,6 +10,7 @@
 
 /*--------common--------*/
 
+
 .padding-l10 { padding-left: 10px; }
 .margin-l10 { margin-left: 10px; }
 .f_l { float: left; }
@@ -20,7 +21,11 @@
 .position-left-bottom { position: absolute; bottom: 0; left: 0; }
 .position-right-bottom { position: absolute; bottom: 0; right: 0; }
 
+.button.button-positive { background: #0c63ee; border-color: #0c63ee; }
+.button.button-positive.button-clear , .slider-pager .slider-pager-page , .positive, a.positive , .tab-item.tab-item-active.tab-item-positive, .tab-item.active.tab-item-positive, .tab-item.activated.tab-item-positive { color: #0c63ee; }
+
 body { background: #eee; }
+
 
 /*------homepage*--------*/
 
@@ -48,8 +53,7 @@ body { background: #eee; }
 /*---------user---------*/
 .item-input { padding-left: 10px; }
 .if-login { padding: 42px 0 0 11px; }
-.if-register { padding: 2px 0 0 11px; }
-
+.modal-backdrop, .modal-backdrop.fade.in { opacity: 1; }
 /*---------meeting---------*/
 .meeting-count { float: right; }
 .meetingName { padding: 0 10px; float: left; }
