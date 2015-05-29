@@ -2,6 +2,7 @@
   		if(context)
     		return moment(context).format('YYYY-MM-DD HH:mm:ss');
 	});
+	/*
 	Template.meetingList.created = function () {
 	  this.autorun(function () {
 	    this.subscription = Meteor.subscribe('meetingList');
@@ -17,7 +18,7 @@
 	    }
 	  }.bind(this));
 	};
-
+*/
 	Template.meetingList.helpers({
 		meetingList: function () {
 			return MeetingList.find({}, {sort: {meetingTime: -1,meetingVote: -1}});
