@@ -2,7 +2,7 @@
   		if(context)
     		return moment(context).format('YYYY-MM-DD HH:mm:ss');
 	});
-	/*
+
 	Template.meetingList.created = function () {
 	  this.autorun(function () {
 	    this.subscription = Meteor.subscribe('meetingList');
@@ -18,7 +18,7 @@
 	    }
 	  }.bind(this));
 	};
-*/
+
 	Template.meetingList.helpers({
 		meetingList: function () {
 			return MeetingList.find({}, {sort: {createdAt: -1,meetingVote: -1}});
@@ -67,7 +67,15 @@
 				IonModal.open('signIn');
 				return;
 			}
-*/			console.log(this._id);
+*/			//console.log(this._id);
+			if(_(Meteor.user().profile.votedMeetingIds).include(this._id)){
+				IonPopup.alert({
+					title: '信息提示',
+					template: '亲，你已经投过!',
+					okText: '😊'
+				});
+			}
+
 			Meteor.call('MeetingList.vote',this._id);
 			
 		}
