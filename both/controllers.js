@@ -17,10 +17,12 @@ registerController = AppController.extend({
 ProfileController = AppController.extend({});
 
 MeetingListController = AppController.extend({
+	/*
 	waitOn:function(){
 		return Meteor.subscribe('meetingList');
 	},
 	data:function(){
 		return {meetingList:MeetingList.find({},{sort:{creatAt:-1}})};
 	}
+	*/
 });
