@@ -20,6 +20,9 @@
 .position-left-bottom { position: absolute; bottom: 0; left: 0; }
 .position-right-bottom { position: absolute; bottom: 0; right: 0; }
 
+.button.button-positive { background: #0c63ee; border-color: #0c63ee; }
+.button.button-positive.button-clear , .slider-pager .slider-pager-page , .positive, a.positive , .tab-item.tab-item-active.tab-item-positive, .tab-item.active.tab-item-positive, .tab-item.activated.tab-item-positive { color: #0c63ee; }
+
 body { background: #eee; }
 
 /*------homepage*--------*/
@@ -44,7 +47,6 @@ body { background: #eee; }
 	font-size: $button-font-size; 
 	position: absolute; 
 }
-.slider-pager .slider-pager-page { color: #DE4F4F; }
 /*---------user---------*/
 .item-input { padding-left: 10px; }
 .if-login { padding: 42px 0 0 11px; }
