@@ -1,17 +1,44 @@
 <template name="register">
 <div class="register-container">   
     <form id="register-form" action="action">
-      <h2>meeting注册</h2>
-     	<input type="username" id="account-username" placeholder="用户名"/>     
-      <input type="tel" id="account-tel" placeholder="电话"/><button>点击获取验证码</button>
-      <input type="code" id="account-code" placeholder="验证码"/>
-      <input type="email" id="account-email" placeholder="邮箱"/>
-      <input type="password" id="account-password" placeholder="密码"/>
-      <input type="password" id="account-confirm-password" placeholder="重复密码"/>
-       <input type="submit" id="create-account" value="注册" />
-   </form>
-    <div class="help-bar">
+      <div class="bar bar-header bar-light">
+          <h1 class="title">大数据系统 - 注册</h1>
+      </div>
+     	
+      <label class="item item-input">
+                <span class="input-label">用户名</span>
+                <input type="username" id="account-username" placeholder="用户名"/>
+      </label>  
+      <label class="item item-input">
+                <span class="input-label">电话</span>
+                <input type="tel" id="account-tel" placeholder="电话"/>
+      </label>
+      <label class="item item-input">
+                <span class="input-label">验证码</span>
+                <input type="code" id="account-code" placeholder="验证码"/>
+      </label>
+      <label class="item item-input">
+                <button>点击获取验证码</button>
+      </label>
+      <label class="item item-input">
+                <span class="input-label">邮箱</span>
+                <input type="email" id="account-email" placeholder="邮箱"/>
+      </label>
+      <label class="item item-input">
+                <span class="input-label">密码</span>
+                <input type="password" id="account-password" placeholder="密码"/>
+      </label>
+      <label class="item item-input">
+                <span class="input-label">重复密码</span>
+                <input type="password" id="account-confirm-password" placeholder="重复密码"/>
+      </label>
+      <div class="padding">
+            <button id="create-account" type="submit" class="button button-block button-positive">注册</button>
+      </div>
+      
+   </form>     
+</div>
+<div class="if-register">
     如果您已有帐号，请&nbsp;<a href="/users/login" id="signUp" class="link signup positive">登录</a>
-    </div>   
 </div>
 </template>
