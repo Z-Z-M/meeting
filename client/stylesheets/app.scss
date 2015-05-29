@@ -48,8 +48,7 @@ body { background: #eee; }
 /*---------user---------*/
 .item-input { padding-left: 10px; }
 .if-login { padding: 42px 0 0 11px; }
-.if-register { padding: 2px 0 0 11px; }
-
+.modal-backdrop, .modal-backdrop.fade.in { opacity: 1; }
 /*---------meeting---------*/
 .meeting-count { float: right; }
 .meetingName { padding: 0 10px; float: left; }
