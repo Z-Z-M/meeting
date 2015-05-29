@@ -2,7 +2,8 @@ var fileObjects = [];
 
 Template.newMeeting.events({
 
-    'click .ion-android-camera': function (evevt, template) {
+    'click .ion-android-camera': function (event, template) {
+        event.preventDefault();
         MeteorCamera.getPicture({width: 1024, height: 768, quality: 100}, function (e, r) {
             if (e) {
                 console.log(e);
@@ -14,7 +15,8 @@ Template.newMeeting.events({
             }
         });
     },
-    'change .fileInput': function (evevt, template) {
+    'change .fileInput': function (event, template) {
+         event.preventDefault();
          FS.Utility.eachFile(event, function (file) {
             var newFile = new FS.File(file);
             fileObjects.push(newFile);

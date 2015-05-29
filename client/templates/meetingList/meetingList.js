@@ -2,6 +2,7 @@
   		if(context)
     		return moment(context).format('YYYY-MM-DD HH:mm:ss');
 	});
+	/*
 	Template.meetingList.created = function () {
 	  this.autorun(function () {
 	    this.subscription = Meteor.subscribe('meetingList');
@@ -17,10 +18,10 @@
 	    }
 	  }.bind(this));
 	};
-
+*/
 	Template.meetingList.helpers({
 		meetingList: function () {
-			return MeetingList.find({}, {sort: {meetingTime: -1,meetingVote: -1}});
+			return MeetingList.find({}, {sort: {createdAt: -1,meetingVote: -1}});
 		},
 		selectedName: function(){
 			console.log(this);
@@ -40,7 +41,11 @@
 			if(_(Meteor.user().profile.votedMeetingIds).contains(this._id)){
 				return 'has-voted';
 			}
+		},
+		uploads: function(){
+			return Uploads.find({_id:{$in:this.fileIds}},{limit:1});
 		}
+
 	});
 
 	Template._meetingItem.events({

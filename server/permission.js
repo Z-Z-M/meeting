@@ -17,9 +17,13 @@ Uploads.allow({
 		return userId;
 	},
 	'update': function(userId, doc, fileds, modifier) {
-		return userId === doc.userId;
+		//return userId === doc.userId;
+		return true;
 	},
 	'remove': function(userId, doc){
 		return false;
+	},
+	'download': function(userId, doc){
+		return true;
 	}
 });

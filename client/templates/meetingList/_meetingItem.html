@@ -1,19 +1,31 @@
 <template name="_meetingItem">
-	{{#with item}}
-	    {{#ionItem _id=this._id selectediconLeft=true iconRight=true  class="meeting-list" }}
-
-            {{#each fileIds}}
-            <img class="small-image" src="/cfs/files/uploads/{{this}}?store=thumbs">
-            {{/each}}
-
-		      <p class="meetingTime f_l">{{meetingTime}}</p>
-		      <p class="meetingTime f_l">{{meetingName}}</p>
-		      <p class="meetingName">
-		        {{tagline}}
-		      </p>
-		      <div class="meeting-count">
-		       ⭐️<span class="vote">{{meetingVotes}}</span>
-		      </div>
-		{{/ionItem}}
-	{{/with}}
+{{#with item}}
+{{#ionItem _id=this._id selectediconLeft=true iconRight=true  class="meeting-list" }}
+<div class="list">
+    <div class="item item-thumbnail-left" href="#">
+        {{#each uploads}}
+        <img class="small-image" src="{{this.url store='thumbs'}}">
+        {{/each}}
+        <h2>{{meetingName}}</h2>
+        <p>{{tagline}}</p>
+        <div class="meeting-count">
+            ⭐️<span class="vote">{{meetingVotes}}</span>
+        </div>
+    </div>
+</div>
+<!--
+    {{#each fileIds}}
+    <img class="small-image" src="/cfs/files/uploads/{{this}}?store=thumbs">
+    {{/each}}
+    <p class="meetingTime f_l">{{meetingTime}}</p>
+    <p class="meetingTime f_l">{{meetingName}}</p>
+    <p class="meetingName">
+        {{tagline}}
+    </p>
+    <div class="meeting-count">
+        ⭐️<span class="vote">{{meetingVotes}}</span>
+    </div>
+-->
+{{/ionItem}}
+{{/with}}
 </template>
