@@ -14,8 +14,6 @@ registerController = AppController.extend({
 	layoutTemplate: ''
 });
 
-MeetingListController = AppController.extend({});
-
 ProfileController = AppController.extend({});
 
 MeetingListController = AppController.extend({

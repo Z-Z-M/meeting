@@ -41,7 +41,11 @@
 			if(_(Meteor.user().profile.votedMeetingIds).contains(this._id)){
 				return 'has-voted';
 			}
+		},
+		uploads: function(){
+			return Uploads.find({_id:{$in:this.fileIds}},{limit:1});
 		}
+
 	});
 
 	Template._meetingItem.events({
