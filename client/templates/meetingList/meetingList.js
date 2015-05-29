@@ -21,7 +21,7 @@
 */
 	Template.meetingList.helpers({
 		meetingList: function () {
-			return MeetingList.find({}, {sort: {meetingTime: -1,meetingVote: -1}});
+			return MeetingList.find({}, {sort: {createdAt: -1,meetingVote: -1}});
 		},
 		selectedName: function(){
 			console.log(this);
