@@ -1,7 +1,7 @@
 Template.settings.events({
   'click [data-action=sign-out]': function (event, template) {
     Meteor.logout(function () {
-      IonModal.close();
+      $('body').removeClass('modal-open');
       Router.go('/');
     });
   }
